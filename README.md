@@ -8,6 +8,9 @@ Can be used to format large blocks of vehicle.set configuration files using comm
   - When the algorithm encounters a commentTrigger, it will find its new state in the vehicleClassHash by cross referencing each entry in the hash table to strings in that line
   - Run main.py in the console to edit-in-place the files in the Editting Folder
 
+## Usecases
+  - When a common pattern (Shared vehicle, similar vehicle class, etc.) needs to be editted across multiple files
+
 ## Algorithm
   - Loops through patterns that need to be editted
   - Loops through each set (equivalent to txt) file in the Editting Folder
