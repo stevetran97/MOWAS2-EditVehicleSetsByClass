@@ -15,7 +15,26 @@ replacementPatterns = [r'c\([0-9]+\)', r'cp\([0-9]+\)']
 # Note: The last hash and replacement pattern sets the state from that comment to the end of the set file
 vehicleClassHash = {
     'lightmgcar': ["c(15)", "cp(0)"],
-    'transport': ["c(5)", "cp(0)"]
+    'transport': ["c(5)", "cp(0)"],
+    'logi': ["c(15)", "cp(0)"],
+    'emplacements': ["c(5)", "cp(5)"],
+    'light_mortar_spg': ["c(15)", "cp(10)"],
+    'lightspgarty': ["c(20)", "cp(15)"],
+    'heavyspgarty': ["c(30)", "cp(20)"],
+    'lightrocketarty': ["c(30)", "cp(15)"],
+    'heavyrocketarty': ["c(30)", "cp(20)"],
+    'light_apc': ["c(5)", "cp(0)"],
+    'medium_wheeled_apc': ["c(10)", "cp(5)"],
+    'heavy_apc': ["c(20)", "cp(10)"],
+    'spg_aa': ["c(15)", "cp(10)"],
+    'medium_tank': ["c(15)", "cp(15)"],
+    'cold_war_tank': ["c(25)", "cp(15)"],
+    'heavy_cold_war_tank': ["c(30)", "cp(20)"],
+    'heavy_modern_war_tank': ["c(35)", "cp(25)"],
+    'very_heavy_modern_war_tank': ["c(40)", "cp(30)"],
+    'tank_destroyer': ["c(15)", "cp(10)"],
+    'aircraft': ["c(60)", "cp(20)"],
+    'light_robot_mech': ["c(40)", "cp(10)"],
 }
 
 # This SINGLE string entry is when enables a state Change check
