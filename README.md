@@ -6,6 +6,7 @@ Can be used to format large blocks of vehicle.set configuration files using comm
   - Comments — which match the strings in the vehicleClassHash table — are to be added in the txt document following the commentTrigger (default of ';')
   - The commentTriggers trigger a state change to the array set of strings used to replace the patterns
   - When the algorithm encounters a commentTrigger, it will find its new state in the vehicleClassHash by cross referencing each entry in the hash table to strings in that line
+  - The algorithm continues looping through each line with the current state, replacing the patterns on that line with the current state values
   - Run main.py in the console to edit-in-place the files in the Editting Folder
 
 ## Usecases
