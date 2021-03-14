@@ -3,7 +3,7 @@ import fileinput
 import re
 import os
 
-
+# ----------------------------------------------------------------------------
 # Input Variables
 
 # Replacement pattern order must match the order of replacement text below
@@ -18,6 +18,9 @@ vehicleClassHash = {
     'transport': ["c(5)", "cp(0)"]
 }
 
+# This SINGLE string entry is when enables a state Change check
+commentTrigger = ';'
+# ----------------------------------------------------------------------------
 # Variables
 fileToEditDirectory = r'.\FilesToEdit'
 
@@ -70,7 +73,7 @@ for index in range(len(replacementPatterns)):
             # For each line
             for line in file:
                 # Trigger state change while searching through lines
-                if line[0] == ';':
+                if line[0] == commentTrigger:
                     state = stateSelection(line, vehicleClassHash)
 
                 # What to search for vs what to replace it with
