@@ -42,8 +42,8 @@ def stateSelection(line, vehicleClassHash):
         # return value of key as state
         if re.search(key, line):
             return vehicleClassHash[key]
-    # If can't find a state, return unused default state
-    return ['', '']
+    # If can't find a state, return DISABLING NONE default state
+    return None
 
 # search and Replace Helper: replaces text_to_search with replacement_text
 
@@ -77,4 +77,8 @@ for index in range(len(replacementPatterns)):
                     state = stateSelection(line, vehicleClassHash)
 
                 # What to search for vs what to replace it with
-                searchAndReplace(replacementPatterns[index], state[index])
+                if state != None:
+                    searchAndReplace(replacementPatterns[index], state[index])
+                else:
+                    # else rewrite unchanged line
+                    print(line, end='')

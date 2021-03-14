@@ -1,4 +1,3 @@
-# MOWAS2-EditVehicleSetsByClass
 Can be used to format large blocks of vehicle.set configuration files using comments as classification blocks.
 
 ## Use
@@ -7,7 +6,12 @@ Can be used to format large blocks of vehicle.set configuration files using comm
   - Comments — which match the strings in the vehicleClassHash table — are to be added in the txt document following the commentTrigger (default of ';')
   - The commentTriggers trigger a state change to the array set of strings used to replace the patterns
   - When the algorithm encounters a commentTrigger, it will find its new state in the vehicleClassHash by cross referencing each entry in the hash table to strings in that line
+  - The algorithm continues looping through each line with the current state, replacing the patterns on that line with the current state values
+  - When the algorithm runs into another commentTrigger, it tries to find a new state. If no new state is found, the algorithm simply rewrites the line as is.
   - Run main.py in the console to edit-in-place the files in the Editting Folder
+
+## Usecases
+  - When a common pattern (Shared vehicle, similar vehicle class, etc.) needs to be editted across multiple files
 
 ## Algorithm
   - Loops through patterns that need to be editted
@@ -19,6 +23,5 @@ Can be used to format large blocks of vehicle.set configuration files using comm
 
 
 ## Current Intrinsic Issues
-  - When a state is triggered, the corresponding replacement set is used for the rest of the txt file. Anything that you do not want to be replaced needs to be replaced by a string copy of itself. In other words, the algorithm is rewriting the entire document with changes rather than just editting.
-
+  - When a state is triggered, the corresponding replacement set is used until the algorithm runs into another trigger. The next trigger found, disables replacement if the no key could be found on that line.
   - The algorithm will always try to replace the input pattern with the current state on EVERY line. 
