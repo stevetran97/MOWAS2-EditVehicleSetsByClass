@@ -22,6 +22,7 @@ Can be used to format large blocks of vehicle.set configuration files using comm
   - If the current pattern is found on the same line, replace it with the replacement string set (determined by the CURRENT state)
 
 
-## Current Intrinsic Issues
+## Current Intrinsic Issues/Assumptions
   - When a state is triggered, the corresponding replacement set is used until the algorithm runs into another trigger. The next trigger found, disables replacement if the no key could be found on that line.
   - The algorithm will always try to replace the input pattern with the current state on EVERY line. 
+  - vehicleClass hash triggers are not duplicated or used to define vehicle unit entries
